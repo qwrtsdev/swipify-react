@@ -1,12 +1,12 @@
 import React from 'react'
 import Navbar from './navigation/Navbar';
-// import Footer from './footer/Footer';
+import Footer from './footer/Footer';
 
 function App() {
   return (
     <div>
       <Navbar />
-      {/* <Footer /> */}
+      <Footer />
     </div>
   )
 }
