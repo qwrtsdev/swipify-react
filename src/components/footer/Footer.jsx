@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHeadphonesSimple } from '@fortawesome/free-solid-svg-icons'
 import { faGrip } from '@fortawesome/free-solid-svg-icons'
 import { faCrown } from '@fortawesome/free-solid-svg-icons'
+import { faComments } from '@fortawesome/free-solid-svg-icons'
 import { faUser } from '@fortawesome/free-solid-svg-icons'
 import { faAngleUp } from '@fortawesome/free-solid-svg-icons'
 
@@ -22,7 +23,7 @@ function Footer() {
                     <FontAwesomeIcon icon={faCrown} />
                 </a>
                 <a href='#' className='footer-icon'>
-                    <FontAwesomeIcon icon={faUser} />
+                    <FontAwesomeIcon icon={faComments} />
                 </a>
                 <a href='#' className='footer-icon'>
                     <FontAwesomeIcon icon={faUser} />
