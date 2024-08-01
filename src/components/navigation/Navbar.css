@@ -1,55 +1,77 @@
+/* control overall navigator */
 .nav {
-    background-color: #1E1E1E;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    height: 100vh;
+}
+
+/* control upper navigator */
+.upper-nav {
+    background-color: #272727;
 
     display: flex;
     justify-content: center;
-
-    width: 100%;
-}
-
-.nav-wrapper {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
     align-items: center;
-    
-    margin: 1rem 0 1rem 0;
+
     width: 100%;
-    max-width: 480px;
-}
 
-.nav-logo {
-    width: 10rem;
-}
-img {
-    width: 100%;
-}
-.swpficon {
-    display: none;
-}
-
-.nav-button {
-    display: flex;
-    flex-direction: row;
-    gap: 1rem;
-}
-.nav-button a {
-    color: white;
-    text-decoration: none;
-}
-
-@media only screen and (max-width: 480px) {
-    .nav-wrapper {
-        margin: 1rem;
-    }
-}
-@media only screen and (max-width: 277px) {
-    .nav-wrapper {
+    .upper-nav-wrapper {
         display: flex;
-        align-items: center;
-        justify-content: center;
+        justify-content: space-between;
+
+        width: 100%;
+        max-width: 480px;
+        margin: 1rem 0 1rem 0;
     }
-    .nav-button {
+
+    .upper-nav-logo {
+        width: 10rem;
+    }
+    .upper-nav-logo img {
+        width: 100%;
+    }
+
+    .swpficon {
         display: none;
     }
+
+    .upper-nav-button {
+        display: flex;
+        gap: 1rem;
+    }
+    .upper-nav-button a {
+        color: white;
+        text-decoration: none;
+        font-size: 1.2rem;
+    }
 }
+
+/* control lower navigator */
+.lower-nav {
+    background-color: #272727;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+
+    .lower-nav-wrapper {
+        display: flex;
+        justify-content: space-between;
+
+        width: 100%;
+        max-width: 480px;
+        margin: 1rem 0 1rem 0;
+    }
+
+    .lower-nav-icon a {
+        color: white;
+        font-size: 5rem;
+        text-decoration: none;
+    }
+}
+
+/* mobile responsive */
