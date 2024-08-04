@@ -1,10 +1,12 @@
 import React from 'react'
-import Navbar from './navigation/Navbar';
+import UpNavbar from './navigation/UpNavbar';
+import DownNavbar from './navigation/DownNavbar';
 
 function App() {
   return (
     <div className='app'>
-      <Navbar />
+      <UpNavbar />
+      <DownNavbar />
     </div>
   )
 }
