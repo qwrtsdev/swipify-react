@@ -1,20 +1,16 @@
 import React from 'react'
-import UpNavbar from './navigation/UpNavbar';
-import DownNavbar from './navigation/DownNavbar';
+import ReactDOM from 'react-dom/client';
+import './App.css';
+import TopNavbar from './navigation/TopNavbar';
+import BottomNavbar from './navigation/BottomNavbar';
 import Card from './contents/card/Card'
 
 function App() {
   return (
     <div className='app'>
-      <div className="appNav" id='up'>
-        <UpNavbar />
-      </div>
-      <div className="appContent">
-        <Card />
-      </div>
-      <div className="appNav" id='down'>
-        <DownNavbar />
-      </div>
+      <TopNavbar />
+      <Card />
+      <BottomNavbar />
     </div>
   )
 }

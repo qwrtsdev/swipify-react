@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBell } from '@fortawesome/free-solid-svg-icons'
 import { faSliders } from '@fortawesome/free-solid-svg-icons'
 
-function UpNavbar() {
+function TopNavbar() {
     return (
         <div className="nav">
             <div className="upper-nav">
@@ -23,4 +23,4 @@ function UpNavbar() {
     );
 }
 
-export default UpNavbar;
+export default TopNavbar;

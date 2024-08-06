@@ -1,28 +1,5 @@
 .card {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
-}
-
-.card-buttons button {
-    background-color: transparent;
-    border: none;
-    margin: 0;
-    padding: 0;
-    text-align: inherit;
-    font: inherit;
-    border-radius: 0;
-    appearance: none;
-}
-.card-buttons button:nth-child(1) {
-    background-color: red !important;
-}
-.card-buttons button:nth-child(2) {
-    background-color: red !important;
-}
-.card-buttons button:nth-child(3) {
-    background-color: red !important;
-}
-.card-buttons button:nth-child(4) {
-    background-color: red !important;
 }

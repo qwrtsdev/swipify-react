@@ -8,7 +8,7 @@ import { faCrown } from '@fortawesome/free-solid-svg-icons'
 import { faComments } from '@fortawesome/free-solid-svg-icons'
 import { faUser } from '@fortawesome/free-solid-svg-icons'
 
-function DownNavbar() {
+function BottomNavbar() {
     return (
         <div className="nav">
             <div className="lower-nav">
@@ -44,4 +44,4 @@ function DownNavbar() {
     );
 }
 
-export default DownNavbar;
+export default BottomNavbar;
