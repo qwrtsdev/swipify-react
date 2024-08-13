@@ -1,0 +1,20 @@
+.app {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+
+    height: 100dvh;
+}
+
+/* stylize navbars */
+.appNav {
+    position: fixed;
+    z-index: 999;
+}
+#top {
+    top: 0;
+}
+#bottom {
+    bottom: 0;
+}
