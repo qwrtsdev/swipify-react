@@ -7,6 +7,7 @@ import { faGrip } from '@fortawesome/free-solid-svg-icons'
 import { faCrown } from '@fortawesome/free-solid-svg-icons'
 import { faComments } from '@fortawesome/free-solid-svg-icons'
 import { faUser } from '@fortawesome/free-solid-svg-icons'
+import { NavLink } from "react-router-dom"
 
 function BottomNavbar() {
     return (
@@ -14,29 +15,29 @@ function BottomNavbar() {
             <div className="lower-nav">
                 <div className="lower-nav-wrapper">
                     <div className="">
-                        <a href='#' className='lower-nav-icon'>
+                        <NavLink to='/' className='lower-nav-icon'>
                             <FontAwesomeIcon icon={faHeadphonesSimple} />
-                        </a>
+                        </NavLink>
                     </div>
                     <div className="">
-                        <a href='#' className='lower-nav-icon'>
+                        <NavLink to='*' className='lower-nav-icon'>
                             <FontAwesomeIcon icon={faGrip} />
-                        </a>
+                        </NavLink>
                     </div>
                     <div className="">
-                        <a href='#' className='lower-nav-icon'>
+                        <NavLink to='*' className='lower-nav-icon'>
                             <FontAwesomeIcon icon={faCrown} />
-                        </a>
+                        </NavLink>
                     </div>
                     <div className="">
-                        <a href='#' className='lower-nav-icon'>
+                        <NavLink to='*' className='lower-nav-icon'>
                             <FontAwesomeIcon icon={faComments} />
-                        </a>
+                        </NavLink>
                     </div>
                     <div className="">
-                        <a href='#' className='lower-nav-icon'>
+                        <NavLink to='/profile' className='lower-nav-icon'>
                             <FontAwesomeIcon icon={faUser} />
-                        </a>
+                        </NavLink>
                     </div>
                 </div>
             </div>

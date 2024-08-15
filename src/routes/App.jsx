@@ -2,10 +2,10 @@ import React from 'react'
 import './App.css';
 import TopNavbar from '../components/navigation/TopNavbar';
 import BottomNavbar from '../components/navigation/BottomNavbar';
-import { Switch, Route } from 'react-router-dom'
+import { Routes, Route } from 'react-router-dom'
 import MainPage from './MainPage/MainPage';
 import ProfileMenu from './ProfileMenu/ProfileMenu';
-import PageNotFound from './PageNotFound/PageNotFound';
+import PageNotFound from './ErrorPage/ErrorPage';
 
 function App() {
   return (
@@ -14,11 +14,11 @@ function App() {
         <TopNavbar />
       </div>
       <div className="appContent">
-        <Switch>
+        <Routes>
           <Route path="/" element={<MainPage />} />
           <Route path="/profile" element={<ProfileMenu />} />
           <Route path="*" element={<PageNotFound />} />
-        </Switch>
+        </Routes>
       </div>
       <div className="appNav" id='bottom'>
         <BottomNavbar />

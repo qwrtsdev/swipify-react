@@ -1,6 +1,6 @@
 import React from 'react'
 import './MainPage.css';
-import Card from '../../components/contents/card/Card'
+import Card from '../../components/card/Card'
 
 function MainPage() {
   return (
