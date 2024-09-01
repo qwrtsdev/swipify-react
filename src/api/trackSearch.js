@@ -1,9 +1,8 @@
 import 'dotenv/config';
 import axios from 'axios';
+import { height } from '@fortawesome/free-brands-svg-icons/fa42Group';
 
 async function trackSearch()  {
-
-    // randomize logic (i know it sucks krub)
     const queryName = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
     const randomQuery = Math.floor(Math.random() * queryName.length);
     const trackIndex = Math.floor(Math.random() * 1000)
@@ -22,24 +21,24 @@ async function trackSearch()  {
         });
 
         const resp = await response.data.tracks.items;
-        // default track object
-        const trackInfo = {
-            name: "",
-            artist: "",
-        }
-        resp.map((tracks) => {
-            trackInfo.name = String(tracks.name);
-            trackInfo.artist = String(tracks.artists.map(artist => artist.name).join(', '));
+        const trackResponse = resp.map((track) => {
+            return {
+                name: track.name,
+                artists: String(track.artists.map(artist => artist.name).join(", ")),
+                trackId: track.id,
+                explicit: track.explicit,
+                popularity: track.popularity,
+                previewUrl: track.preview_url,
+                // imagesUrl: JSON.stringify(track.album.images, ['height', 'url']),
+            }
         })
-        return trackInfo;
+        await console.log(trackResponse);
+        return trackResponse;
     } catch(error) {
         return error.message;
     }
-
 }
 
-// ## debugging ##
-// const debuglog = await trackSearch();
-// console.log(debuglog);
+trackSearch();
 
-export default trackSearch;
+// export default trackSearch;
