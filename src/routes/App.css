@@ -7,6 +7,10 @@
     height: 100dvh;
 }
 
+body {
+    background-color: #4d4c4c;
+}
+
 /* stylize navbars */
 .appNav {
     position: fixed;
@@ -17,4 +21,15 @@
 }
 #bottom {
     bottom: 0;
+}
+
+
+
+@media only screen and (max-width: 480px) {
+    .appContent {
+        display: flex;
+        justify-content: center;
+
+        width: 100dvw;
+    }
 }

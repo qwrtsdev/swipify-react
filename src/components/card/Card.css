@@ -9,8 +9,8 @@
     position: relative;
 }
 
-p {
-    -webkit-user-select: none; /* Safari */
-    -ms-user-select: none; /* IE 10 and IE 11 */
-    user-select: none; /* Standard syntax */
-  }
+.no_selection {
+    -webkit-user-select: none !important; /* Safari */
+    -ms-user-select: none !important; /* IE 10 and IE 11 */
+    user-select: none !important; /* Standard syntax */
+}

@@ -1,13 +1,17 @@
 import React, { useState, useEffect } from 'react';
-import ReactDOM from 'react-dom';
-import './Card.css'
 
-// import TinderCard from 'react-tinder-card'
-// import trackSearch from '../../api/trackSearch';
-
-function Card() {
+function Card(props) {
+    const { trackInfo } = props;
+    
     return (
-        <p>how tf im gonna use api data here</p>
+        <div className='no_selection'>
+            <p>{trackInfo.name || 'Unknown Name'}</p>
+            <p>{trackInfo.artists || 'Unknown Artist'}</p>
+            <p>{trackInfo.trackId || 'No ID'}</p>
+            <p>{trackInfo.explicit ? 'Explicit' : 'Not Explicit'}</p>
+            <p>{trackInfo.popularity || 'Unknown Popularity'}</p>
+            <p>{trackInfo.previewUrl ? <a href={trackInfo.previewUrl}>Preview</a> : 'No Preview Available'}</p>
+        </div>
     );
 }
 

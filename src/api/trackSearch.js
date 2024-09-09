@@ -1,6 +1,5 @@
 import 'dotenv/config';
 import axios from 'axios';
-import { height } from '@fortawesome/free-brands-svg-icons/fa42Group';
 
 async function trackSearch()  {
     const queryName = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];

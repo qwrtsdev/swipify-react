@@ -1,0 +1,63 @@
+.content-wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+
+    .loading-state {
+        color: #1cb553;
+        font-size: 3rem;
+
+        -webkit-animation: spin 1.5s linear infinite;
+        animation: spin 1.5s linear infinite;
+    }
+
+    .error-state {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+
+        gap: 0.75rem;
+
+        .error-message {
+            .error-message-head {
+                color: #ff2f2f;
+                margin: 0;
+            }
+
+            .error-message-msg {
+                color: white;
+
+                
+            }
+        }
+
+        .error-button {
+            button {
+                background-color: #8d8d8d;
+                color: white;
+                border: none;
+                padding: 0.75em 1.5em;
+                border-radius: 999px;
+            }
+        }
+    }
+}
+
+/* for smaller devices */
+@media only screen and (max-width: 480px) {
+    .content-wrap {
+        width: 80%;
+    }
+}
+
+/* loading animation */
+@-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+}
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
