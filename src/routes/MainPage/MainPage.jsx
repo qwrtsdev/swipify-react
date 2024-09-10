@@ -4,9 +4,10 @@ import './MainPage.css';
 
 import Card from '../../components/card/Card';
 import axios from 'axios';
-dsfkndkfkfdfkldjfdijkof
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTriangleExclamation, faArrowsRotate, faSpinner } from '@fortawesome/free-solid-svg-icons'
+import TinderCard from 'react-tinder-card';
 
 function MainPage() {
     const [track, setTrack] = useState([]);
@@ -27,7 +28,7 @@ function MainPage() {
                     q: queryName[randomQuery],
                     offset: trackIndex,
                     type: 'track',
-                    limit: 3,
+                    limit: 2,
                 },
             });
 
@@ -62,14 +63,10 @@ function MainPage() {
         trackQuery();
     }, []);
 
-    function refreshPage() {
-        window.location.reload(false);
-    }
-
     if (loading) {
         return (
             <div className="content-wrap">
-                <p className="loading-state"><FontAwesomeIcon icon={faSpinner} /></p>;
+                <p className="loading-state"><FontAwesomeIcon icon={faSpinner} /></p>
             </div>
         )
     }
@@ -82,20 +79,62 @@ function MainPage() {
                         <p className="error-message-msg">{error}</p>
                     </div>
                     <div className="error-button">
-                        <button className='error-refresh' onClick={refreshPage}><FontAwesomeIcon icon={faArrowsRotate} /> Refresh</button>
+                        <button className='error-refresh' onClick={() => {window.location.reload(false)}}><FontAwesomeIcon icon={faArrowsRotate} /> Refresh</button>
                     </div>
                 </div>
             </div>
         )
     }
 
-    return (
-        <>
+    // snippets for implementations
+    const onSwipe = (direction) => {
+        console.log('swiped: ' + direction);
+    }
+    const onCardLeftScreen = (myIdentifier) => {
+        console.log(myIdentifier + ' left the screen');
+    }
 
+    const swipe = () => {
+        // interactions
+    }
+    const cardRestore = () => {
+        // rewind cards
+    }
+    const cardFav = () => {
+        // work if swiped left
+    }
+    const cardSkip = () => {
+        // work if swiped right
+    }
+
+    return (
+        <div className='content-wrap'>
             {track.map((myTracks) => (
-                <Card key={myTracks.trackId} trackInfo={myTracks} />
+                <div className="card-swipable" key={myTracks.trackId}>
+                    <TinderCard 
+                    preventSwipe={['']}
+                    onSwipe={onSwipe} 
+                    onCardLeftScreen={() => {onCardLeftScreen('test')}}
+                >
+                        <Card trackInfo={myTracks} />
+                    </TinderCard>
+                </div>
             ))}
-        </>
+            <div className="card-interaction">
+                <button onClick={cardRestore}>
+
+                </button>
+                <button onClick={swipe('left', cardFav)}>
+                    
+                </button>
+                <button onClick={swipe('right', cardSkip)}>
+                    
+                </button>
+                <button onClick={console.log('redirect button')}>
+                    
+                </button>
+            </div>
+        </div>
     );
 }
 

@@ -4,7 +4,7 @@ function Card(props) {
     const { trackInfo } = props;
     
     return (
-        <div className='no_selection'>
+        <div className='card-swipable'>
             <p>{trackInfo.name || 'Unknown Name'}</p>
             <p>{trackInfo.artists || 'Unknown Artist'}</p>
             <p>{trackInfo.trackId || 'No ID'}</p>

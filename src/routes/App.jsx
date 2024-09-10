@@ -1,7 +1,9 @@
 import React from 'react'
 import './App.css';
+
 import TopNavbar from '../components/navigation/TopNavbar';
 import BottomNavbar from '../components/navigation/BottomNavbar';
+
 import { Routes, Route } from 'react-router-dom'
 import MainPage from './MainPage/MainPage';
 import ProfileMenu from './ProfileMenu/ProfileMenu';
