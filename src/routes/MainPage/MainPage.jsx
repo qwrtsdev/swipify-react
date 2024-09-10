@@ -4,7 +4,7 @@ import './MainPage.css';
 
 import Card from '../../components/card/Card';
 import axios from 'axios';
-
+dsfkndkfkfdfkldjfdijkof
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTriangleExclamation, faArrowsRotate, faSpinner } from '@fortawesome/free-solid-svg-icons'
 
