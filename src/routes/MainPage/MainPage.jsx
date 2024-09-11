@@ -6,7 +6,7 @@ import Card from '../../components/card/Card';
 import axios from 'axios';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faTriangleExclamation, faArrowsRotate, faSpinner } from '@fortawesome/free-solid-svg-icons'
+import { faTriangleExclamation, faArrowsRotate, faSpinner, faBackward, faHeart, faHeartCrack, faHeadphonesSimple } from '@fortawesome/free-solid-svg-icons'
 import TinderCard from 'react-tinder-card';
 
 function MainPage() {
@@ -110,11 +110,12 @@ function MainPage() {
     return (
         <div className='content-wrap'>
             {track.map((myTracks) => (
-                <div className="card-swipable" key={myTracks.trackId}>
+                <div className="card-content" key={myTracks.trackId}>
                     <TinderCard 
-                    preventSwipe={['']}
+                    preventSwipe={['up','down']}
                     onSwipe={onSwipe} 
                     onCardLeftScreen={() => {onCardLeftScreen('test')}}
+                    swipeThreshold={1500}
                 >
                         <Card trackInfo={myTracks} />
                     </TinderCard>
@@ -122,16 +123,16 @@ function MainPage() {
             ))}
             <div className="card-interaction">
                 <button onClick={cardRestore}>
-
+                    <FontAwesomeIcon icon={faBackward} />
                 </button>
                 <button onClick={swipe('left', cardFav)}>
-                    
+                    <FontAwesomeIcon icon={faHeart} />
                 </button>
                 <button onClick={swipe('right', cardSkip)}>
-                    
+                    <FontAwesomeIcon icon={faHeartCrack} />
                 </button>
                 <button onClick={console.log('redirect button')}>
-                    
+                    <FontAwesomeIcon icon={faHeadphonesSimple} />
                 </button>
             </div>
         </div>

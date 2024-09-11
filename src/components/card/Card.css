@@ -3,8 +3,21 @@
     src: url(../../../..//public/fonts/Inter-Variable.ttf);
 }
 
-.card {
+.card-swipable {
+    background-color: red !important;
+
     display: flex;
-    flex-direction: column;
-    position: relative;
+    flex-direction: row;
+    justify-content: space-between;
+
+    .card-left {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .limited-text {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
 }

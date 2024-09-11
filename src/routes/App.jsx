@@ -6,8 +6,10 @@ import BottomNavbar from '../components/navigation/BottomNavbar';
 
 import { Routes, Route } from 'react-router-dom'
 import MainPage from './MainPage/MainPage';
+import LoginPage from './Authen/LoginPage/LoginPage';
 import ProfileMenu from './ProfileMenu/ProfileMenu';
 import PageNotFound from './ErrorPage/ErrorPage';
+
 
 function App() {
   return (
@@ -18,6 +20,7 @@ function App() {
       <div className="appContent">
         <Routes>
           <Route path="/" element={<MainPage />} />
+          <Route path="/login" element={<LoginPage />} />
           <Route path="/profile" element={<ProfileMenu />} />
           <Route path="*" element={<PageNotFound />} />
         </Routes>
