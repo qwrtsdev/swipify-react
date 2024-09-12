@@ -3,21 +3,72 @@
     src: url(../../../..//public/fonts/Inter-Variable.ttf);
 }
 
-.card-swipable {
-    background-color: red !important;
+.card-content {
+    display: flex;
+    flex-direction: column;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    font-family: InterV;
+    
+}
+.card-image {
+    user-drag: none;    /* Disable image dragging */
+    pointer-events: none;
+}
+.card-info {
+    background-color: #282424;
+    color: white;
 
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 
-    .card-left {
-        display: flex;
-        flex-direction: column;
-    }
+    padding: 0 1rem;
 
-    .limited-text {
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-    }
+    overflow: hidden;
+    white-space: nowrap;
+    line-height: 1lh;
+
+}
+.track-name {
+    user-select: none;
+    white-space: nowrap;     /* Prevent the text from wrapping to the next line */
+    overflow: hidden;        /* Hide the overflowing text */
+    text-overflow: ellipsis;
+}
+.track-artist {
+    user-select: none;
+    overflow: hidden;
+    white-space: nowrap;
+    line-height: 1lh;
+    text-overflow: ellipsis;
+}
+
+.track-right {
+    align-items: flex-start;
+}
+.track-available {
+    background-color: #13d055;
+    font-size: 2rem;
+    text-align: center;
+    border-radius: 100%;
+
+    margin: 0 0;
+    width: 1.3em;
+    height: 1.3em;
+}
+.track-available a {
+    text-decoration: none !important;
+    color: #189845;
+}
+.track-not-available {
+    color: rgb(88, 88, 88);
+    background-color: rgb(146, 146, 146);
+    font-size: 2.5rem;
+    text-align: center;
+    border-radius: 100%;
+
+    margin: 0;
+    width: 1.1em;
+    height: 1.1em;
 }

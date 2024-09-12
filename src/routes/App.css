@@ -1,37 +1,31 @@
-.app {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-
-    height: 100dvh;
-}
-
 body {
     background-color: #4d4c4c;
-}
 
-/* stylize navbars */
-.appNav {
-    position: fixed;
-    z-index: 999;
-}
-#top {
-    top: 0;
-}
-#bottom {
-    bottom: 0;
-}
-
-.appContent {
-    max-width: 480px;
-}
-
-@media only screen and (max-width: 480px) {
-    .appContent {
+    .app {
         display: flex;
         justify-content: center;
-
+        align-items: center;
+        overflow: hidden;
+    
+        height: 100dvh;
         width: 100dvw;
+    }
+
+    /* stylize navbars */
+    .appNav {
+        position: fixed;
+        z-index: 999;
+    }
+    #top {
+        top: 0;
+    }
+    #bottom {
+        bottom: 0;
+    }
+
+    /* stylize main content */
+    .appContent {
+        width: 100%;
+        max-width: 480px;
     }
 }

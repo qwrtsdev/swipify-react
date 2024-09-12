@@ -1,13 +1,14 @@
-.content-wrap {
+@font-face {
+    font-family: InterV;
+    src: url(../../../..//public/fonts/Inter-Variable.ttf);
+}
+
+.error-content-wrap {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    /* text-align: center; */
 
-    width: 100%;
-    max-width: 480px;
-
-    /* # Sub system # */
+    /* ## Sub system ## */
     .loading-state {
         color: #1cb553;
         font-size: 3rem;
@@ -16,49 +17,142 @@
         animation: spin 1.5s linear infinite;
     }
 
+    /* ## Error System ## */
     .error-state {
+        font-family: InterV;
+        background-color: #797979;
+        border-radius: 0.5rem;
+        overflow: hidden;
+
         display: flex;
         flex-direction: column;
         justify-content: center;
         text-align: center;
 
-        gap: 0.75rem;
+        /* gap: 0.75rem; */
+        width: 100%;
 
-        .error-message {
-            .error-message-head {
-                color: #ff2f2f;
-                margin: 0;
-            }
+        .error-head {
+            background-color: #656565;
+            color: #ffffff;
+
+            margin: 0;
+            padding: 0.5rem 0 0.5rem 0;
+        }
+
+        .error-prompt {
+            padding: 1.5rem 0 1.5rem 0;
 
             .error-message-msg {
                 color: white;
 
-                
+                margin: 0;
+                padding: 0;
             }
         }
 
-        .error-button {
-            button {
-                background-color: #8d8d8d;
-                color: white;
-                border: none;
-                padding: 0.75em 1.5em;
-                border-radius: 999px;
-            }
+        .error-refresh {
+            background-color: #8d8d8d;
+            color: white;
+            border: none;
+            margin: 1rem 0 0 0;
+            padding: 0.75em 1.5em;
+            border-radius: 999px;
         }
     }
-
-    /* # Main System # */
-    
 }
 
-/* for smaller devices */
+/* ## Main System ## */
+.content-wrap {
+    display: flex;
+    flex-direction: column;
+
+    height: 75dvh;
+
+    .card-swipable {
+        
+    }
+
+    .card-buttons {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+
+        button {
+            color: white;
+            text-align: center;
+            border-radius: 100%;
+            border: none;
+            cursor: pointer;
+
+            width: 2.5em;
+            height: 2.5em;
+        }
+        .rewind {
+            color: #31adff;
+            background-color: rgba(255, 255, 255, 0.2);
+            border: #2773dd 5px solid;
+            font-size: 1.6rem;
+        }
+        .like {
+            color: #40f783;
+            background-color: rgba(255, 255, 255, 0.2);
+            border: #1cb553 5px solid;
+            font-size: 2rem;
+        }
+        .unlike {
+            color: rgb(245, 63, 63);
+            background-color: rgba(255, 255, 255, 0.2);
+            border: rgb(180, 32, 32) 5px solid;
+            font-size: 2rem;
+        }
+        .listen {
+            color: rgb(246, 194, 52);
+            background-color: rgba(255, 255, 255, 0.2);
+            border: rgb(197, 151, 25) 5px solid;
+            font-size: 1.6rem;
+        }
+    }
+}
+
+.card-swipable {
+    position: relative; /* Ensure that the child elements are positioned relative to this container */
+    width: 100%; /* Adjust this as needed */
+    height: 100%; /* Adjust this as needed */
+}
+
+.card-generate {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; /* Adjust to control card size */
+    height: 100%; /* Adjust to control card size */
+    z-index: 1; /* Default stacking order */
+}
+
+.card-generate:nth-child(1) {
+    z-index: 2; /* First card on top */
+}
+
+.card-generate:nth-child(2) {
+    z-index: 1; /* Second card below */
+}
+
+/* ## for smaller devices ## */
 @media only screen and (max-width: 480px) {
+    .error-content-wrap {
+        margin: 0 1rem 0 1rem;
+    }
+
     .content-wrap {
+        flex-direction: column;
+
+        margin: 0 1rem 0 1rem;
+        height: 80dvh;
     }
 }
 
-/* loading animation */
+/* ## loading animation ## */
 @-webkit-keyframes spin {
     0% { -webkit-transform: rotate(0deg); }
     100% { -webkit-transform: rotate(360deg); }

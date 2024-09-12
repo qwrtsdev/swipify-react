@@ -4,10 +4,12 @@ import './MainPage.css';
 
 import Card from '../../components/card/Card';
 import axios from 'axios';
+import TinderCard from 'react-tinder-card';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTriangleExclamation, faArrowsRotate, faSpinner, faBackward, faHeart, faHeartCrack, faHeadphonesSimple } from '@fortawesome/free-solid-svg-icons'
-import TinderCard from 'react-tinder-card';
 
 function MainPage() {
     const [track, setTrack] = useState([]);
@@ -65,20 +67,18 @@ function MainPage() {
 
     if (loading) {
         return (
-            <div className="content-wrap">
+            <div className="error-content-wrap">
                 <p className="loading-state"><FontAwesomeIcon icon={faSpinner} /></p>
             </div>
         )
     }
     if (error) {
         return (
-            <div className="content-wrap">
+            <div className="error-content-wrap">
                 <div className="error-state">
-                    <div className="error-message">
-                        <p className="error-message-head"><FontAwesomeIcon icon={faTriangleExclamation} /></p>
+                    <p className="error-head"><FontAwesomeIcon icon={faTriangleExclamation} /> <strong>WARNING</strong></p>
+                    <div className="error-prompt">
                         <p className="error-message-msg">{error}</p>
-                    </div>
-                    <div className="error-button">
                         <button className='error-refresh' onClick={() => {window.location.reload(false)}}><FontAwesomeIcon icon={faArrowsRotate} /> Refresh</button>
                     </div>
                 </div>
@@ -107,31 +107,37 @@ function MainPage() {
         // work if swiped right
     }
 
+    const warningToast = () => {
+        toast.warn("This feature will be coming soon.");
+    }
+
     return (
         <div className='content-wrap'>
-            {track.map((myTracks) => (
-                <div className="card-content" key={myTracks.trackId}>
-                    <TinderCard 
-                    preventSwipe={['up','down']}
-                    onSwipe={onSwipe} 
-                    onCardLeftScreen={() => {onCardLeftScreen('test')}}
-                    swipeThreshold={1500}
-                >
-                        <Card trackInfo={myTracks} />
-                    </TinderCard>
-                </div>
-            ))}
-            <div className="card-interaction">
-                <button onClick={cardRestore}>
+            <div className="card-swipable">
+                {track.map((myTracks) => (
+                    <div className="card-generate" key={myTracks.trackId}>
+                        <TinderCard 
+                        preventSwipe={['up','down']}
+                        onSwipe={onSwipe} 
+                        onCardLeftScreen={() => {onCardLeftScreen('test')}}
+                        swipeThreshold={1500}
+                    >
+                            <Card trackInfo={myTracks} />
+                        </TinderCard>
+                    </div>
+                ))}
+            </div>
+            <div className="card-buttons">
+                <button className="rewind" onClick={warningToast}>
                     <FontAwesomeIcon icon={faBackward} />
                 </button>
-                <button onClick={swipe('left', cardFav)}>
+                <button className="like" onClick={swipe('left', cardFav)}>
                     <FontAwesomeIcon icon={faHeart} />
                 </button>
-                <button onClick={swipe('right', cardSkip)}>
+                <button className="unlike" onClick={swipe('right', cardSkip)}>
                     <FontAwesomeIcon icon={faHeartCrack} />
                 </button>
-                <button onClick={console.log('redirect button')}>
+                <button className="listen" onClick={warningToast}>
                     <FontAwesomeIcon icon={faHeadphonesSimple} />
                 </button>
             </div>
