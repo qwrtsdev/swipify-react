@@ -25,7 +25,7 @@ body {
 
     /* stylize main content */
     .appContent {
-        width: 100%;
-        max-width: 480px;
+        width: 100dvw;
+        height: 100dvh;
     }
 }

@@ -112,15 +112,16 @@ function MainPage() {
     }
 
     return (
-        <div className='content-wrap'>
-            <div className="card-swipable">
+        <div className='content-display'>
+            {/* <div className="card-swipable">
                 {track.map((myTracks) => (
                     <div className="card-generate" key={myTracks.trackId}>
                         <TinderCard 
                         preventSwipe={['up','down']}
                         onSwipe={onSwipe} 
                         onCardLeftScreen={() => {onCardLeftScreen('test')}}
-                        swipeThreshold={1500}
+                        swipeThreshold={100}
+                        flickOnSwipe={true}
                     >
                             <Card trackInfo={myTracks} />
                         </TinderCard>
@@ -140,7 +141,7 @@ function MainPage() {
                 <button className="listen" onClick={warningToast}>
                     <FontAwesomeIcon icon={faHeadphonesSimple} />
                 </button>
-            </div>
+            </div> */}
         </div>
     );
 }

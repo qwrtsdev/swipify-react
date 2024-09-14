@@ -3,12 +3,11 @@
     src: url(../../../..//public/fonts/Inter-Variable.ttf);
 }
 
-.error-content-wrap {
+/* .error-content-wrap {
     display: flex;
     flex-direction: column;
     justify-content: center;
 
-    /* ## Sub system ## */
     .loading-state {
         color: #1cb553;
         font-size: 3rem;
@@ -17,7 +16,6 @@
         animation: spin 1.5s linear infinite;
     }
 
-    /* ## Error System ## */
     .error-state {
         font-family: InterV;
         background-color: #797979;
@@ -29,7 +27,6 @@
         justify-content: center;
         text-align: center;
 
-        /* gap: 0.75rem; */
         width: 100%;
 
         .error-head {
@@ -62,12 +59,11 @@
     }
 }
 
-/* ## Main System ## */
 .content-wrap {
     display: flex;
     flex-direction: column;
 
-    height: 75dvh;
+    max-height: 75dvh;
 
     .card-swipable {
         
@@ -116,27 +112,27 @@
 }
 
 .card-swipable {
-    position: relative; /* Ensure that the child elements are positioned relative to this container */
-    width: 100%; /* Adjust this as needed */
-    height: 100%; /* Adjust this as needed */
+    position: relative;
+    width: 100%;
+    height: 100%;
 }
 
 .card-generate {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%; /* Adjust to control card size */
-    height: 100%; /* Adjust to control card size */
-    z-index: 1; /* Default stacking order */
+    width: 100%;
+    height: 100%;
+    z-index: 1;
 }
 
 .card-generate:nth-child(1) {
-    z-index: 2; /* First card on top */
+    z-index: 2;
 }
 
 .card-generate:nth-child(2) {
-    z-index: 1; /* Second card below */
-}
+    z-index: 1;
+} */
 
 /* ## for smaller devices ## */
 @media only screen and (max-width: 480px) {
