@@ -1,0 +1,10 @@
+.login-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .login-form__form-control {
+        display: flex;
+        flex-direction: column;
+    }
+}

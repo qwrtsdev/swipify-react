@@ -1,23 +1,31 @@
+/* ## custom font ## */
 @font-face {
     font-family: InterV;
-    src: url(../../../..//public/fonts/Inter-Variable.ttf);
+    src: url('../../../public/fonts/Inter-Variable.ttf');
 }
 
-/* .error-content-wrap {
+/* ## system content wrap ## */
+.content-wrap--system {
+    font-family: InterV;
+
     display: flex;
     flex-direction: column;
     justify-content: center;
 
-    .loading-state {
+    width: 100%;
+    max-width: 480px;
+    height: 80dvh;
+
+    /* ## loading effect ## */
+    .content-wrap--system__loading {
         color: #1cb553;
         font-size: 3rem;
 
-        -webkit-animation: spin 1.5s linear infinite;
         animation: spin 1.5s linear infinite;
     }
 
-    .error-state {
-        font-family: InterV;
+    /* ## error prompt ## */
+    .content-wrap--system__error {
         background-color: #797979;
         border-radius: 0.5rem;
         overflow: hidden;
@@ -29,7 +37,7 @@
 
         width: 100%;
 
-        .error-head {
+        .content-wrap--system__error--head {
             background-color: #656565;
             color: #ffffff;
 
@@ -37,42 +45,71 @@
             padding: 0.5rem 0 0.5rem 0;
         }
 
-        .error-prompt {
+        .content-wrap--system__error--prompt {
             padding: 1.5rem 0 1.5rem 0;
 
-            .error-message-msg {
+            .content-wrap--system__error--prompt__msg {
                 color: white;
 
                 margin: 0;
                 padding: 0;
             }
-        }
 
-        .error-refresh {
-            background-color: #8d8d8d;
-            color: white;
-            border: none;
-            margin: 1rem 0 0 0;
-            padding: 0.75em 1.5em;
-            border-radius: 999px;
+            .content-wrap--system__error--prompt__refresh {
+                background-color: #8d8d8d;
+                color: white;
+                border: none;
+                margin: 1rem 0 0 0;
+                padding: 0.75em 1.5em;
+                border-radius: 999px;
+            }
         }
     }
 }
 
-.content-wrap {
+/* ## main content wrap ## */
+.content-wrap--main {
+    font-family: InterV;
+    border: red 3px dotted;
     display: flex;
     flex-direction: column;
+    justify-content: center;
 
-    max-height: 75dvh;
+    width: 100%;
+    max-width: 480px;
+    height: 70dvh;
 
-    .card-swipable {
-        
+    /* ## card swipes layout ## */
+    .card--swipable {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        /* overflow: hidden; */
+
+        .card--swipable--generate {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1;
+        }
+        .card--swipable--generate:nth-child(1) {
+            z-index: 3;
+        }
+        .card--swipable--generate:nth-child(2) {
+            z-index: 2;
+        }
+        .card--swipable--generate:nth-child(3) {
+            z-index: 1;
+        }
     }
 
-    .card-buttons {
+    /* ## button layout ## */
+    .card--buttons {
         display: flex;
         justify-content: space-around;
         align-items: center;
+        position: relative;
 
         button {
             color: white;
@@ -84,25 +121,27 @@
             width: 2.5em;
             height: 2.5em;
         }
-        .rewind {
+
+        /* ## button styles ## */
+        .card--buttons--rewind {
             color: #31adff;
             background-color: rgba(255, 255, 255, 0.2);
             border: #2773dd 5px solid;
             font-size: 1.6rem;
         }
-        .like {
+        .card--buttons--like {
             color: #40f783;
             background-color: rgba(255, 255, 255, 0.2);
             border: #1cb553 5px solid;
             font-size: 2rem;
         }
-        .unlike {
+        .card--buttons--dislike {
             color: rgb(245, 63, 63);
             background-color: rgba(255, 255, 255, 0.2);
             border: rgb(180, 32, 32) 5px solid;
             font-size: 2rem;
         }
-        .listen {
+        .card--buttons--listen {
             color: rgb(246, 194, 52);
             background-color: rgba(255, 255, 255, 0.2);
             border: rgb(197, 151, 25) 5px solid;
@@ -111,40 +150,16 @@
     }
 }
 
-.card-swipable {
-    position: relative;
-    width: 100%;
-    height: 100%;
-}
-
-.card-generate {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-}
-
-.card-generate:nth-child(1) {
-    z-index: 2;
-}
-
-.card-generate:nth-child(2) {
-    z-index: 1;
-} */
-
-/* ## for smaller devices ## */
+/* ## devices breakpoints ## */
 @media only screen and (max-width: 480px) {
-    .error-content-wrap {
-        margin: 0 1rem 0 1rem;
+    .content-wrap--system {
+        padding: 0 1rem 0 1rem;
     }
 
-    .content-wrap {
+    .content-wrap--main {
         flex-direction: column;
 
         margin: 0 1rem 0 1rem;
-        height: 80dvh;
     }
 }
 

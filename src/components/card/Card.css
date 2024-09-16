@@ -4,16 +4,19 @@
 }
 
 .card-content {
+    font-family: InterV;
+    border-radius: 0.5rem;
+
     display: flex;
     flex-direction: column;
-    border-radius: 0.5rem;
     overflow: hidden;
-    font-family: InterV;
-    
 }
 .card-image {
     user-drag: none;    /* Disable image dragging */
     pointer-events: none;
+    overflow: hidden;
+    max-height: 100%;
+    object-fit: cover;
 }
 .card-info {
     background-color: #282424;

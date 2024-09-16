@@ -1,4 +1,7 @@
+/* ## root ## */
 :root, html, body, #root {
+  background-color: #4d4c4c;
+  
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;

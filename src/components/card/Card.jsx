@@ -25,9 +25,11 @@ function Card(props) {
         // <p>{trackInfo.explicit ? 'Explicit' : 'Not Explicit'}</p>
         // <p>{trackInfo.popularity || 'Unknown Popularity'}</p>
 
-        <div className="card-content">
-            <img className="card-image" src="https://placehold.co/500x500" />
-            <div className="card-info">
+        <div className="swipe-content">
+            <div className="swipe-content__image">
+                <img className="swipe-content__image" src="https://placehold.co/500x500" />
+            </div>
+            <div className="swipe-content__info">
                 <div className="card-left">
                     <strong><p className="track-name">{trackInfo.name || 'N/A'}</p></strong>
                     <p className="track-artist">{trackInfo.artists || 'N/A'}</p>

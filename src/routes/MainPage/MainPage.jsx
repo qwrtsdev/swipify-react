@@ -30,7 +30,7 @@ function MainPage() {
                     q: queryName[randomQuery],
                     offset: trackIndex,
                     type: 'track',
-                    limit: 2,
+                    limit: 3,
                 },
             });
 
@@ -67,21 +67,25 @@ function MainPage() {
 
     if (loading) {
         return (
-            <div className="error-content-wrap">
-                <p className="loading-state"><FontAwesomeIcon icon={faSpinner} /></p>
+            <div className="content-wrap--system">
+
+                <p className="content-wrap--system__loading"><FontAwesomeIcon icon={faSpinner} /></p>
+
             </div>
         )
     }
     if (error) {
         return (
-            <div className="error-content-wrap">
-                <div className="error-state">
-                    <p className="error-head"><FontAwesomeIcon icon={faTriangleExclamation} /> <strong>WARNING</strong></p>
-                    <div className="error-prompt">
-                        <p className="error-message-msg">{error}</p>
-                        <button className='error-refresh' onClick={() => {window.location.reload(false)}}><FontAwesomeIcon icon={faArrowsRotate} /> Refresh</button>
+            <div className="content-wrap--system">
+
+                <div className="content-wrap--system__error">
+                    <p className="content-wrap--system__error--head"><FontAwesomeIcon icon={faTriangleExclamation} /> <strong>WARNING</strong></p>
+                    <div className="content-wrap--system__error--prompt">
+                        <p className="content-wrap--system__error--prompt__msg">{error}</p>
+                        <button className='content-wrap--system__error--prompt__refresh' onClick={() => {window.location.reload(false)}}><FontAwesomeIcon icon={faArrowsRotate} /> Refresh</button>
                     </div>
                 </div>
+
             </div>
         )
     }
@@ -112,15 +116,15 @@ function MainPage() {
     }
 
     return (
-        <div className='content-display'>
-            {/* <div className="card-swipable">
+        <div className='content-wrap--main'>
+
+            <div className="card--swipable">
                 {track.map((myTracks) => (
-                    <div className="card-generate" key={myTracks.trackId}>
+                    <div className="card--swipable--generate" key={myTracks.trackId}>
                         <TinderCard 
                         preventSwipe={['up','down']}
                         onSwipe={onSwipe} 
                         onCardLeftScreen={() => {onCardLeftScreen('test')}}
-                        swipeThreshold={100}
                         flickOnSwipe={true}
                     >
                             <Card trackInfo={myTracks} />
@@ -128,20 +132,21 @@ function MainPage() {
                     </div>
                 ))}
             </div>
-            <div className="card-buttons">
-                <button className="rewind" onClick={warningToast}>
+            <div className="card--buttons">
+                <button className="card--buttons--rewind" onClick={warningToast}>
                     <FontAwesomeIcon icon={faBackward} />
                 </button>
-                <button className="like" onClick={swipe('left', cardFav)}>
+                <button className="card--buttons--like" onClick={swipe('left', cardFav)}>
                     <FontAwesomeIcon icon={faHeart} />
                 </button>
-                <button className="unlike" onClick={swipe('right', cardSkip)}>
+                <button className="card--buttons--dislike" onClick={swipe('right', cardSkip)}>
                     <FontAwesomeIcon icon={faHeartCrack} />
                 </button>
-                <button className="listen" onClick={warningToast}>
+                <button className="card--buttons--listen" onClick={warningToast}>
                     <FontAwesomeIcon icon={faHeadphonesSimple} />
                 </button>
-            </div> */}
+            </div>
+
         </div>
     );
 }

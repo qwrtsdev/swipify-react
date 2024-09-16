@@ -1,0 +1,40 @@
+@font-face {
+    font-family: InterV;
+    src: url('../../../public/fonts/Inter-Variable.ttf');
+}
+
+.profile {
+    color: white;
+    font-family: InterV;
+
+
+    .profile__prompt {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .profile__prompt__button {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+    
+            width: 100%;
+            gap: 0.5rem;
+
+            button {
+                background-color: #1cb553;
+                color: white;
+                border: none;
+                font-size: 1.1rem;
+
+                padding: 0.75em 1.5em;
+                border-radius: 999px;
+            }
+            .profile__prompt__button--text {
+                color: white;
+                text-decoration: none;
+            }
+        }
+    }
+    
+}

@@ -13,26 +13,33 @@ import RegisterPage from './Authen/RegisterPage/RegisterPage';
 import LoginPage from './Authen/LoginPage/LoginPage';
 import ProfileMenu from './ProfileMenu/ProfileMenu';
 import PageNotFound from './ErrorPage/ErrorPage';
+import TestPage from './TestPage/TestPage';
 
 
 function App() {
   return (
     <div className='app'>
-      <div className="appNav" id='top'>
+
+      <div className="app__nav app__nav--top">
         <TopNavbar />
       </div>
-      <div className="appContent">
+
+      <div className="app__content">
         <Routes>
           <Route path="/" element={<MainPage />} />
           <Route path="/register" element={<RegisterPage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/profile" element={<ProfileMenu />} />
+          <Route path="/apptest" element={<TestPage />} />
           <Route path="*" element={<PageNotFound />} />
         </Routes>
       </div>
-      <div className="appNav" id='bottom'>
+
+      <div className="app__nav app__nav--bottom">
         <BottomNavbar />
       </div>
+
+      {/* ## Toast messages (DO NOT TOUCH) */}
       <ToastContainer
       position="top-center"
       autoClose={5000}
@@ -45,6 +52,7 @@ function App() {
       pauseOnHover
       theme="light"
       />
+
     </div>
   )
 }
