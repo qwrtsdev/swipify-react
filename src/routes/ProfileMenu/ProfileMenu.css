@@ -7,6 +7,8 @@
     color: white;
     font-family: InterV;
 
+    width: 100%;
+    max-width: 480px;
 
     .profile__prompt {
         display: flex;
@@ -36,5 +38,73 @@
             }
         }
     }
+
+    .profile--logged{
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .profile__info {
+        display: flex;
+        flex-direction: column;
+
+        .profile__avatar {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+
+            p {
+                text-align: center;
+            }
+        }
+
+        tr {
+            line-height: 1.5;
+
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+
+            .profile__info--label, .profile__info--value {
+                margin: 0; /* Remove default margins */
+                white-space: nowrap; /* Prevent text from wrapping to the next line */
+                overflow: hidden; /* Hide any overflow text */
+                text-overflow: ellipsis;
+            }
+            .profile__info--label {
+                width: 9rem;
+            }
+            .profile__info--value {
+                flex: 1; /* Allow this to take up the remaining space */
+                text-align: right;
+            }
+        }
+    }
     
+    .profile__logout {
+        background-color: red;
+        color: white;
+        outline: none;
+        border: none;
+        font-size: 1rem;
+
+        align-self: center;
+
+        padding: 0.75em 1.25em;
+        border-radius: 999px;
+    }
+}
+
+/* ## devices breakpoints ## */
+@media only screen and (max-width: 480px) {
+    .profile {
+        padding: 0 1rem 0 1rem;
+        
+        .profile--logged {
+            padding: 0 1rem 0 1rem;
+        }
+    }
 }

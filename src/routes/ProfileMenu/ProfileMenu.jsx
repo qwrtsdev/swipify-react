@@ -7,6 +7,9 @@ import { getAuth, onAuthStateChanged, signOut } from "firebase/auth";
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faArrowRightFromBracket, faAt, faFingerprint, faClock } from '@fortawesome/free-solid-svg-icons'
+
 // NOTE: Firebase configuration & initialize
 const firebaseConfig = {
     apiKey: `${import.meta.env.VITE_FB_APIKEY}`,
@@ -36,10 +39,13 @@ function ProfileMenu() {
     return () => authUser(); // Cleanup subscription on unmount
   }, []);
 
+  const avatarName = user ? user.email.split('@')[0] : 'Guest';
+
+  const navigate = useNavigate();
   const userLogout = async () => {
     try {
         await signOut(auth);
-        window.location.reload();
+        navigate('/');
     } catch {
         toast.warn("Error when logged out")
     }
@@ -61,8 +67,31 @@ function ProfileMenu() {
 
   return (
     <div className='profile'>
-        
-        <button onClick={userLogout}>logout</button>
+      <div className="profile--logged">
+        <div className="profile__avatar">
+          <img src="" alt="" />
+          <p>{avatarName}</p>
+        </div>
+        <table className="profile__info">
+          <tr>
+            <p className='profile__info--label'><FontAwesomeIcon icon={faAt} /> Email :</p>
+            <p className='profile__info--value'>{user.email}</p>
+          </tr>
+          <tr>
+            <p className='profile__info--label'><FontAwesomeIcon icon={faFingerprint} /> UID :</p>
+            <p className='profile__info--value'>{user.uid}</p>
+          </tr>
+          <tr>
+            <p className='profile__info--label'><FontAwesomeIcon icon={faClock} /> User Created :</p>
+            <p className='profile__info--value'>{user.creationTime}</p>
+          </tr>
+          <tr>
+            <p className='profile__info--label'><FontAwesomeIcon icon={faClock} /> Last Login :</p>
+            <p className='profile__info--value'>{user.lastSignInTime}</p>
+          </tr>
+        </table>
+        <button className='profile__logout' onClick={userLogout}><FontAwesomeIcon icon={faArrowRightFromBracket} /> Logout</button>
+      </div>
     </div>
   );
 }
