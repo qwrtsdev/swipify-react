@@ -1,20 +1,46 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useEffect, useState } from 'react';
 import './MainPage.css';
+import { useNavigate } from "react-router-dom"
 
 import Card from '../../components/card/Card';
 import axios from 'axios';
 import TinderCard from 'react-tinder-card';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { initializeApp } from "firebase/app";
+import { getAuth, onAuthStateChanged } from "firebase/auth";
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTriangleExclamation, faArrowsRotate, faSpinner, faBackward, faHeart, faHeartCrack, faHeadphonesSimple } from '@fortawesome/free-solid-svg-icons'
+
+// NOTE: Firebase configuration & initialize
+const firebaseConfig = {
+    apiKey: `${import.meta.env.VITE_FB_APIKEY}`,
+    authDomain: `${import.meta.env.VITE_FB_AUTHDOMAIN}`,
+    projectId: `${import.meta.env.VITE_FB_PROJECTID}`,
+    storageBucket: `${import.meta.env.VITE_FB_STORAGE}`,
+    messagingSenderId: `${import.meta.env.VITE_FB_MESSAGE}`,
+    appId: `${import.meta.env.VITE_FB_APPID}`,
+    measurementId: `${import.meta.env.VITE_FB_MID}`,
+};
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
 
 function MainPage() {
     const [track, setTrack] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
+    const [user, setUser] = useState(null);
+
+    useEffect(() => {
+        const authUser = onAuthStateChanged(auth, (user) => {
+            setUser(user);
+        });
+        return () => authUser(); // Cleanup subscription on unmount
+    }, []);
+    
+    const navigate = useNavigate();
 
     const trackSearch = async () => {
         const queryName = 'abcdefghijklmnopqrstuvwxyz'.split('');
@@ -90,9 +116,15 @@ function MainPage() {
         )
     }
 
+    
+
     // snippets for implementations
     const onSwipe = (direction) => {
-        console.log('swiped: ' + direction);
+        if (!user) {
+            navigate('/login');
+        } else {
+            if ()
+        }
     }
     const onCardLeftScreen = (myIdentifier) => {
         console.log(myIdentifier + ' left the screen');
