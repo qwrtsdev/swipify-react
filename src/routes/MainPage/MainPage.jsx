@@ -56,7 +56,7 @@ function MainPage() {
                     q: queryName[randomQuery],
                     offset: trackIndex,
                     type: 'track',
-                    limit: 3,
+                    limit: 2,
                 },
             });
 
@@ -119,13 +119,26 @@ function MainPage() {
     
 
     // snippets for implementations
-    const onSwipe = (direction) => {
+    const onSwipe = async (direction) => {
         if (!user) {
-            navigate('/login');
+          toast.error('Please login before using Swipify.');
+          navigate('/login');
         } else {
-            if ()
+          try {
+            const newTracks = await trackSearch();
+            // Use spread to merge the current tracks with new ones
+            const updatedTracks = [...track, ...newTracks]; 
+      
+            // Remove the first element
+            const trackAfterRemove = updatedTracks.slice(1);
+      
+            // Update state with the new array
+            setTrack(trackAfterRemove);
+          } catch (error) {
+            toast.error(error.message);
+          }
         }
-    }
+      };
     const onCardLeftScreen = (myIdentifier) => {
         console.log(myIdentifier + ' left the screen');
     }
@@ -136,11 +149,49 @@ function MainPage() {
     const cardRestore = () => {
         // rewind cards
     }
-    const cardFav = () => {
-        // work if swiped left
-    }
-    const cardSkip = () => {
-        // work if swiped right
+    const cardFav = async () => {
+        if (!user) {
+          toast.error('Please login before using Swipify.');
+          navigate('/login');
+        } else {
+          try {
+            const newTracks = await trackSearch();
+            // Use spread to merge the current tracks with new ones
+            const updatedTracks = [...track, ...newTracks]; 
+      
+            // Remove the first element
+            const trackAfterRemove = updatedTracks.slice(1);
+      
+            // Update state with the new array
+            setTrack(trackAfterRemove);
+          } catch (error) {
+            toast.error(error.message);
+          }
+        }
+      };
+      
+    const cardSkip = async (direction) => {
+        if (!user) {
+          toast.error('Please login before using Swipify.');
+          navigate('/login');
+        } else {
+          try {
+            const newTracks = await trackSearch();
+            // Use spread to merge the current tracks with new ones
+            const updatedTracks = [...track, ...newTracks]; 
+      
+            // Remove the first element
+            const trackAfterRemove = updatedTracks.slice(1);
+      
+            // Update state with the new array
+            setTrack(trackAfterRemove);
+          } catch (error) {
+            toast.error(error.message);
+          }
+        }
+      }; 
+    const goListen = () => {
+        window.location.href(`https://open.spotify.com/track/${track[0].trackId}`);
     }
 
     const warningToast = () => {
@@ -168,10 +219,10 @@ function MainPage() {
                 <button className="card--buttons--rewind" onClick={warningToast}>
                     <FontAwesomeIcon icon={faBackward} />
                 </button>
-                <button className="card--buttons--like" onClick={swipe('left', cardFav)}>
+                <button className="card--buttons--like" onClick={cardFav}>
                     <FontAwesomeIcon icon={faHeart} />
                 </button>
-                <button className="card--buttons--dislike" onClick={swipe('right', cardSkip)}>
+                <button className="card--buttons--dislike" onClick={cardSkip}>
                     <FontAwesomeIcon icon={faHeartCrack} />
                 </button>
                 <button className="card--buttons--listen" onClick={warningToast}>

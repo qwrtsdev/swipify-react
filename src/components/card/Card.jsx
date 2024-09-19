@@ -27,10 +27,10 @@ function Card(props) {
 
         <div className="swipe-content">
             <div className="swipe-content__image">
-                <img className="swipe-content__image" src="https://placehold.co/500x500" />
+                <img className="swipe-content__image--source" src="https://placehold.co/500x500" />
             </div>
             <div className="swipe-content__info">
-                <div className="card-left">
+                <div className="swipe-content__info--track">
                     <strong><p className="track-name">{trackInfo.name || 'N/A'}</p></strong>
                     <p className="track-artist">{trackInfo.artists || 'N/A'}</p>
                 </div>

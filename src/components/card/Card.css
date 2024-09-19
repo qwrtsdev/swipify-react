@@ -3,50 +3,54 @@
     src: url(../../../..//public/fonts/Inter-Variable.ttf);
 }
 
-.card-content {
+.swipe-content {
     font-family: InterV;
     border-radius: 0.5rem;
 
     display: flex;
     flex-direction: column;
     overflow: hidden;
-}
-.card-image {
-    user-drag: none;    /* Disable image dragging */
-    pointer-events: none;
-    overflow: hidden;
-    max-height: 100%;
-    object-fit: cover;
-}
-.card-info {
-    background-color: #282424;
-    color: white;
 
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    .swipe-content__image {
+        object-position: center;
+        object-fit: cover;
 
-    padding: 0 1rem;
-
-    overflow: hidden;
-    white-space: nowrap;
-    line-height: 1lh;
-
+        height: 300px;
+        .swipe-content__image--source {
+            user-drag: none;
+            pointer-events: none;
+            overflow: hidden;
+            object-position: center;
+            object-fit: cover;
+            width: 100%;
+        }
+    }
+    .swipe-content__info {
+        background-color: #282424;
+        color: white;
+    
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    
+        padding: 0 1rem;
+    
+        white-space: nowrap;
+        line-height: 1lh;
+    
+        .swipe-content__info--track, .swipe-content__info--preview {
+            margin: 0;
+        }
+        .swipe-content__info--track {
+            user-select: none;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    }
 }
-.track-name {
-    user-select: none;
-    white-space: nowrap;     /* Prevent the text from wrapping to the next line */
-    overflow: hidden;        /* Hide the overflowing text */
-    text-overflow: ellipsis;
-}
-.track-artist {
-    user-select: none;
-    overflow: hidden;
-    white-space: nowrap;
-    line-height: 1lh;
-    text-overflow: ellipsis;
-}
 
+/* ## track info stylize ## */
 .track-right {
     align-items: flex-start;
 }

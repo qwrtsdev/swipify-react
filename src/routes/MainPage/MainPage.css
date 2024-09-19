@@ -70,7 +70,6 @@
 /* ## main content wrap ## */
 .content-wrap--main {
     font-family: InterV;
-    border: red 3px dotted;
     display: flex;
     flex-direction: column;
     justify-content: center;
