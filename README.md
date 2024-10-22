@@ -1,6 +1,6 @@
 
 
-<center>
+<p align=center>
 
 ![Swipify Logo](https://media.discordapp.net/attachments/1297492873398452267/1298371333851185253/swipify-githublogo.png?ex=67195208&is=67180088&hm=81c8044cbfbd41b93b3c651dfd0d2cca07c322730fa730bce6fe0ecf6444f1ad&=&format=webp&quality=lossless&width=994&height=285)
 
@@ -11,7 +11,7 @@
 based on [Tinder](https://tinder.com) and [Swipefy](https://x.com/swipefyapp) but made completely from scratch!<br />
 for people who feeling bored with their every day song.
 
-</center>
+</p>
 
 > [!NOTE] 
 > This project was my first web application for educational and made during rush, thus it was not taking serious like it should do. You might find it wacky and facing some issues during use.
