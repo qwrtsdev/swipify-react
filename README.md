@@ -21,15 +21,26 @@ for people who feeling bored with their every day song.
 > [!NOTE] 
 > This project is now planned to be **continue** in the future, please stay tuned for any further updates.
 
+## ✅ Features
+- Tinder-alike Card Swipe & Buttons
+- Infinite Song Generation
+- Song Previews
+- Basic Authentication
+
 ## 📝 Prequisites
 - [Yarn Package Manager](https://yarnpkg.com)
 - [Spotify Developer Account](https://developer.spotify.com/)
 - [Google Firebase Account]()
 
+## 📦 Installation
+Run this command to install all of dependencies
+```
+yarn add
+```
+
 ## ⚙ Setup
 > [!CAUTION]
 > For beginners: please don't skip and follow the instructions carefully to making sure nothing is broken. (sorry for the inconvenience.)
-- Run `yarn add` command in project's terminal to install all the dependencies.
 - Run `yarn run dev` command to start the server.
 - Go to [Spotify API Dashboard](https://developer.spotify.com/dashboard/) and create an application.
 - Go to application's settings and copy `Client ID` and `Client Secret`.
