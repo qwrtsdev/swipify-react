@@ -22,6 +22,7 @@ for people who feeling bored with their every day song.
 > This project is now planned to be **continue** in the future, please stay tuned for any further updates.
 
 ## 📝 Prequisites
+- [Yarn Package Manager](https://yarnpkg.com)
 - [Spotify Developer Account](https://developer.spotify.com/)
 - [Google Firebase Account]()
 
