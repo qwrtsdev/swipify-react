@@ -4,17 +4,22 @@
 
 ![Swipify Logo](https://media.discordapp.net/attachments/1297492873398452267/1298371333851185253/swipify-githublogo.png?ex=67195208&is=67180088&hm=81c8044cbfbd41b93b3c651dfd0d2cca07c322730fa730bce6fe0ecf6444f1ad&=&format=webp&quality=lossless&width=994&height=285)
 
-![Discord](https://img.shields.io/discord/1236751677801889792?style=flat&logo=discord&labelColor=blueple&color=%235865F2&link=https%3A%2F%2Fdiscord.gg%2FJKsYSd4TVf) ![GitHub last commit](https://img.shields.io/github/last-commit/qwrtsdev/swipify-react) ![X (formerly Twitter) Follow](https://img.shields.io/twitter/follow/dumbqwrts)
+![Discord](https://img.shields.io/discord/1236751677801889792?style=flat&logo=discord&labelColor=blueple&color=%235865F2&link=https%3A%2F%2Fdiscord.gg%2FJKsYSd4TVf) ![GitHub last commit](https://img.shields.io/github/last-commit/qwrtsdev/swipify-react) ![X (formerly Twitter) Follow](https://img.shields.io/twitter/follow/dumbqwrts) 
+
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/W7W712L0CA)
 
 
 **Swipify** is an open-source music shuffler.<br />
-based on [Tinder](https://tinder.com) and [Swipefy](https://x.com/swipefyapp) but made completely from scratch!<br />
+inspried from [Tinder](https://tinder.com) and [Swipefy](https://x.com/swipefyapp) but made completely from scratch!<br />
 for people who feeling bored with their every day song.
 
 </div>
 
 > [!NOTE] 
 > This project was my first web application for educational and made during rush, thus it was not taking serious like it should do. You might find it wacky and facing some issues during use.
+
+> [!NOTE] 
+> This project is now planned to be **continue** in the future, please stay tuned for any further updates.
 
 ## 📝 Prequisites
 - [Spotify Developer Account](https://developer.spotify.com/)
@@ -23,7 +28,8 @@ for people who feeling bored with their every day song.
 ## ⚙ Setup
 > [!CAUTION]
 > For beginners: please don't skip and follow the instructions carefully to making sure nothing is broken. (sorry for the inconvenience.)
-- Go to [Spotify API Dashboard](https://developer.spotify.com/dashboard/) and create the application
+- Run `yarn add` in project's terminal to install all the dependencies
+- Go to [Spotify API Dashboard](https://developer.spotify.com/dashboard/) and create an application
 - Go to application's settings and copy `Client ID` and `Client Secret`
 - Create an `.env` file and enter
     ```
@@ -54,7 +60,7 @@ for people who feeling bored with their every day song.
     VITE_FB_APPID=""
     VITE_FB_MID=""
     ```
-    (Some keys just not necessary to use but keep them as they might help. Read full documentation about Firebase Authentication [here](https://firebase.google.com/docs/auth))
+- Fill out all the keys to enable the Authentication (Some keys just not necessary to use but keep them as they might help. Read full documentation about Firebase Authentication [here](https://firebase.google.com/docs/auth) / You can remove the authentication processes from the system. If you know how.)
 
 ## 💬 Community
 The **FullstackHub** community is very welcomed for everyone! Where you can ask questions, sharing knowledges and ideas about web development or programming-related topics.<br />
