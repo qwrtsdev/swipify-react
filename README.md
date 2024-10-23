@@ -28,29 +28,30 @@ for people who feeling bored with their every day song.
 ## ⚙ Setup
 > [!CAUTION]
 > For beginners: please don't skip and follow the instructions carefully to making sure nothing is broken. (sorry for the inconvenience.)
-- Run `yarn add` in project's terminal to install all the dependencies
-- Go to [Spotify API Dashboard](https://developer.spotify.com/dashboard/) and create an application
-- Go to application's settings and copy `Client ID` and `Client Secret`
-- Create an `.env` file and enter
+- Run `yarn add` command in project's terminal to install all the dependencies.
+- Run `yarn run dev` command to start the server.
+- Go to [Spotify API Dashboard](https://developer.spotify.com/dashboard/) and create an application.
+- Go to application's settings and copy `Client ID` and `Client Secret`.
+- Create an `.env` file and enter :
     ```
     VITE_SPOTIFY_CLIENT="<your client id goes here>"
     VITE_SPOTIFY_SECRET="<your client secret goes here>"
     VITE_SPOTIFY_ACCESS="<read the next part>"
     ```
-- Request an access key (in this situation it was called `SPOTIFY_ACCESS`) by using tools such as [Postman](https://www.postman.com) or [cURL](https://curl.se) and using this template of script
+- Request an access key (in this situation it was called `SPOTIFY_ACCESS`) by using tools such as [Postman](https://www.postman.com) or [cURL](https://curl.se) and using this template of script :
     ```
     - https://accounts.spotify.com/api/token (as the endpoint)
     - application/x-www-form-urlencoded (as header called: Content-Type)
     - client_credentials&client_id=<SPOTIFY_CLIENT>&client_secret=<SPOTIFY_SECRET> (as parameter called: grant_type)
     ```
-- You'll get a response from Spotify in this format
+- You'll get a response from Spotify in this format :
     ```
     {"access_token":"<SPOTIFY_ACCESS>","token_type":"Bearer","expires_in":3600}
     ```
-- Open your `.env` file and fill out the `<SPOTIFY_ACCESS>` section with the key you got from the response
-- Go to [Google Firebase Console](https://console.firebase.google.com) and create a project
-- Go to `Authentication` section and setup how you want
-- Open your `.env` file and enter
+- Open your `.env` file and fill out the `<SPOTIFY_ACCESS>` section with the key you got from the response.
+- Go to [Google Firebase Console](https://console.firebase.google.com) and create a project.
+- Go to `Authentication` section and setup how you want.
+- Open your `.env` file and enter :
     ```
     VITE_FB_APIKEY=""
     VITE_FB_AUTHDOMAIN=""
@@ -60,7 +61,7 @@ for people who feeling bored with their every day song.
     VITE_FB_APPID=""
     VITE_FB_MID=""
     ```
-- Fill out all the keys to enable the Authentication (Some keys just not necessary to use but keep them as they might help. Read full documentation about Firebase Authentication [here](https://firebase.google.com/docs/auth) / You can remove the authentication processes from the system. If you know how.)
+- Fill out all the keys to enable the Authentication (Some keys just not necessary to use but keep them as they might help. Read full documentation about Firebase Authentication [here](https://firebase.google.com/docs/auth) and you also can remove the authentication processes from the system anytime. If you know how.)
 
 ## 💬 Community
 The **FullstackHub** community is very welcomed for everyone! Where you can ask questions, sharing knowledges and ideas about web development or programming-related topics.<br />
